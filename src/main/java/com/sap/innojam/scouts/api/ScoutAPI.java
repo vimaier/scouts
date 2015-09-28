@@ -1,6 +1,5 @@
 package com.sap.innojam.scouts.api;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
@@ -14,7 +13,6 @@ import javax.ws.rs.core.SecurityContext;
 
 import com.sap.innojam.scouts.dao.SensorDAO;
 import com.sap.innojam.scouts.entity.Scout;
-import com.sap.innojam.scouts.entity.Upload;
 
 @Path("/scout")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -37,12 +35,5 @@ public class ScoutAPI {
 		return DummyData.scott;
 	}
 
-	@GET
-	@Path("/uploads")
-	public List<Upload> getAllUploadsOfCurrentUser() {
-		//TODO: return upload ids (or better get-urls) of the user
-//		return dao.findAllByOwnerAndDevice(request.getUserPrincipal().getName(), device);
-		return null;
-	}
 
 }
