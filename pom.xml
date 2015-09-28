@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sap.innojam</groupId>
-	<artifactId>sample</artifactId>
+	<artifactId>scouts</artifactId>
 	<packaging>war</packaging>
-	<name>InnoJam HCP</name>
+	<name>InnoJam scouts</name>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
