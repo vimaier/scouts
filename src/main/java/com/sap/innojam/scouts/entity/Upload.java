@@ -15,48 +15,49 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Upload {
 
 	public enum Type {
-		Video,
-		Audio,
-		Image
+		Video, Audio, Image
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
+	private Talent uploader;
+
 	@NotNull
 	private TalentCategory category;
 
 	@NotNull
 	private Type type;
-	
+
 	private List<Like> likes;
 
 	protected Upload() {
 	}
 
-	public Upload(TalentCategory category , Type type) {
+	public Upload(TalentCategory category, Type type) {
 		this.category = category;
 		this.type = type;
 	}
 
-	@XmlTransient
 	public long getId() {
 		return id;
 	}
 
-	@XmlTransient
 	public TalentCategory getCategory() {
 		return category;
 	}
 
-	@XmlTransient
 	public Type getType() {
 		return type;
 	}
-	
-	@XmlTransient
+
 	public List<Like> getLikes() {
 		return likes;
 	}
+
+	public Talent getUploader() {
+		return uploader;
+	}
+
 }
