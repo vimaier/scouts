@@ -36,6 +36,8 @@ public class Upload {
 	
 	@NotNull
 	private String extension;
+	
+	private String title;
 
 	private List<Like> likes;
 
@@ -52,6 +54,7 @@ public class Upload {
 		this.category = category;
 		this.type = type;
 		this.extension = extension;
+		this.title = "Awesome " + type ;
 	}
 
 	public long getId() {
@@ -77,6 +80,10 @@ public class Upload {
 	
 	public String getExtension(){
 		return extension;
+	}
+	
+	public String getTitle(){
+		return title;
 	}
 	
 	public String getPath(){

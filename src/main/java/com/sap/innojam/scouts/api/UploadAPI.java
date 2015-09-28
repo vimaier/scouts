@@ -94,8 +94,8 @@ public class UploadAPI {
 	}
 
 	@POST
-	@Path("/next/{scoutid}")
-	public Upload getRandomNext(@PathParam("scoutid") String scoutId, FilterData filterData) {
+	@Path("/next")
+	public Upload getRandomNext(FilterData filterData) {
 		//TODO: get the next random upload. Use scoutId for history tracking and filterData to get only filtered uploads.
 		return null;
 	}
