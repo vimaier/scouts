@@ -32,17 +32,14 @@ public class TalentCategory {
 		this.parent = parent;
 	}
 
-	@XmlTransient
 	public long getId() {
 		return id;
 	}
 
-	@XmlTransient
 	public String getName() {
 		return name;
 	}
 
-	@XmlTransient
 	public TalentCategory getParent() {
 		return parent;
 	}
