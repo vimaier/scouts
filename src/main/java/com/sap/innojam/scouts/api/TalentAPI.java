@@ -61,4 +61,24 @@ public class TalentAPI {
 		return null;
 	}
 
+	@GET
+	@Path("/accept/{scoutid}")
+	public JsonResponse acceptScoutRequest(@PathParam("scoutid") String scoutId) {
+		//TODO: get uid of current talent
+		//TODO: check if scoutId is in list of TalentRequests of curr Talent
+		//TODO: if yes change state to 'accepted'
+		//TODO: send/save notification
+		return null;
+	}
+	
+	@GET
+	@Path("/reject/{scoutid}")
+	public JsonResponse rejectScoutRequest(@PathParam("scoutid") String scoutId) {
+		//TODO: get uid of current talent
+		//TODO: check if scoutId is in list of TalentRequests of curr Talent
+		//TODO: if yes change state to 'rejected'
+		//TODO: send/save notification
+		return null;
+	}
+	
 }
