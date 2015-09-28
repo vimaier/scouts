@@ -1,2 +1,2 @@
-sensortag-hcp
+scouts-hcp
 =============
