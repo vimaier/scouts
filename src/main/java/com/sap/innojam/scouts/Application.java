@@ -1,4 +1,4 @@
-package com.sap.innojam.sample;
+package com.sap.innojam.scouts;
 
 import java.lang.annotation.Annotation;
 import java.util.HashSet;

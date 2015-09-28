@@ -1,10 +1,10 @@
-package com.sap.innojam.sample.dao;
+package com.sap.innojam.scouts.dao;
 
 import java.util.List;
 
 import org.glassfish.jersey.process.internal.RequestScoped;
 
-import com.sap.innojam.sample.entity.SensorData;
+import com.sap.innojam.scouts.entity.SensorData;
 
 @RequestScoped
 public class SensorDAO extends BaseDAO<SensorData, Integer> {

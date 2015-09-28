@@ -1,4 +1,4 @@
-package com.sap.innojam.sample.ws;
+package com.sap.innojam.scouts.ws;
 
 import java.io.IOException;
 import java.util.Collections;

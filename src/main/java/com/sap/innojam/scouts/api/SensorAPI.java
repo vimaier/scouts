@@ -1,4 +1,4 @@
-package com.sap.innojam.sample.api;
+package com.sap.innojam.scouts.api;
 
 import java.util.Date;
 import java.util.List;
@@ -14,8 +14,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
 
-import com.sap.innojam.sample.dao.SensorDAO;
-import com.sap.innojam.sample.entity.SensorData;
+import com.sap.innojam.scouts.dao.SensorDAO;
+import com.sap.innojam.scouts.entity.SensorData;
 
 @Path("/sensor")
 @Consumes(MediaType.APPLICATION_JSON)

@@ -1,4 +1,4 @@
-package com.sap.innojam.sample.entity;
+package com.sap.innojam.scouts.entity;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-import com.sap.innojam.sample.ws.BaseJsonCoder;
+import com.sap.innojam.scouts.ws.BaseJsonCoder;
 
 @Entity
 @XmlRootElement

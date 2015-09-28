@@ -1,4 +1,4 @@
-package com.sap.innojam.sample.dao;
+package com.sap.innojam.scouts.dao;
 
 import java.util.Collection;
 import java.util.List;

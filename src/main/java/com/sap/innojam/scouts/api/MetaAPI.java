@@ -1,4 +1,4 @@
-package com.sap.innojam.sample.api;
+package com.sap.innojam.scouts.api;
 
 import java.util.HashMap;
 import java.util.Map;
