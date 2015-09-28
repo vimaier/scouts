@@ -2,6 +2,7 @@ package com.sap.innojam.scouts.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -69,6 +70,19 @@ public class UploadAPI {
 		return null;
 	}
 
+	@GET
+	@Path("/random")
+	public Upload getRandom(){
+		int rnd = (new Random()).nextInt(dummyData.size());
+		return dummyData.get(rnd);
+	}
+	
+	@GET
+	@Path("")
+	public List<Upload> getAll(){
+		return dummyData;
+	}
+	
 
 	@POST
 	@Path("/create")
@@ -80,8 +94,8 @@ public class UploadAPI {
 	}
 
 	@POST
-	@Path("/next/{scoutid}")
-	public Upload getRandomNext(@PathParam("scoutid") String scoutId, FilterData filterData) {
+	@Path("/next")
+	public Upload getRandomNext(FilterData filterData) {
 		//TODO: get the next random upload. Use scoutId for history tracking and filterData to get only filtered uploads.
 		return null;
 	}
