@@ -46,4 +46,9 @@ public class TalentCategory {
 	public TalentCategory getParent() {
 		return parent;
 	}
+	
+	@Override
+	public String toString(){
+		return name;
+	}
 }

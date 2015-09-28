@@ -24,12 +24,14 @@ public abstract class User {
 	public User() {
 		super();
 	}
+	public User(String uid) {
+		this.uid = uid;
+	}
 
 	public User(String uid, String artistname, String firstname,
 			String lastname, int age, String gender, String mail,
 			List<TalentRequest> talreq) {
-		super();
-		this.uid = uid;
+		this(uid);
 		this.artistname = artistname;
 		this.firstname = firstname;
 		this.lastname = lastname;

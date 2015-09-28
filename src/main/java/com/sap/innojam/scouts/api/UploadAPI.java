@@ -1,5 +1,8 @@
 package com.sap.innojam.scouts.api;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -12,6 +15,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
 
 import com.sap.innojam.scouts.dao.SensorDAO;
+import com.sap.innojam.scouts.entity.Talent;
+import com.sap.innojam.scouts.entity.TalentCategory;
 import com.sap.innojam.scouts.entity.FilterData;
 import com.sap.innojam.scouts.entity.Upload;
 
@@ -20,6 +25,22 @@ import com.sap.innojam.scouts.entity.Upload;
 @Produces(MediaType.APPLICATION_JSON)
 public class UploadAPI {
 
+	private static List<Upload> dummyData = new ArrayList<Upload>();
+	static{
+		TalentCategory catPainting = new TalentCategory("Painting");
+		TalentCategory catSinging = new TalentCategory("Singing");
+		TalentCategory catDancing = new TalentCategory("Dancing");
+		Talent dummyTalent = new Talent("ted@talent.com");
+		Upload dummyUploadImg = new Upload(1, dummyTalent, catPainting, Upload.Type.Image, "jpg");
+		Upload dummyUploadAudio = new Upload(2, dummyTalent, catSinging, Upload.Type.Audio, "mp3");
+		Upload dummyUploadVideo = new Upload(3, dummyTalent, catDancing, Upload.Type.Video, "mp4");
+		dummyTalent.getUploads().add(dummyUploadImg);
+		dummyTalent.getUploads().add(dummyUploadAudio);
+		dummyTalent.getUploads().add(dummyUploadVideo);
+		dummyData = dummyTalent.getUploads();
+	}
+	
+	
 	@Inject
 	SensorDAO dao;
 	
@@ -31,6 +52,20 @@ public class UploadAPI {
 	public Upload getUpload(@PathParam("uid") String uploadId) {
 		//TODO: add stub Upload. Media transport, not JSON!
 //		return dao.findAllByOwnerAndDevice(request.getUserPrincipal().getName(), device);
+		
+		//parse uploadId
+		long uid = -1;
+		try{
+			uid = Long.parseLong(uploadId);
+		}catch(NumberFormatException e){
+			return null;
+		}
+		
+		//get dummy upload
+		for(Upload u : dummyData){
+			if(uid == u.getId())
+				return u;
+		}
 		return null;
 	}
 
@@ -57,5 +92,7 @@ public class UploadAPI {
 		//TODO: create a like. Liker is identified by the current user (get him from session) and the Upload by upId.
 		return null;
 	}
+	
+	
 	
 }

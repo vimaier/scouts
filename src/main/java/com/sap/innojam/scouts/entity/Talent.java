@@ -1,5 +1,6 @@
 package com.sap.innojam.scouts.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -13,6 +14,11 @@ public class Talent extends User {
 
 	public Talent() {
 		super();
+	}
+	
+	public Talent(String uid){
+		super(uid);
+		uploads = new ArrayList<Upload>();
 	}
 
 	public Talent(String uid, String artistname, String firstname,
