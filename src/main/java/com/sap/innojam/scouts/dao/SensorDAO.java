@@ -13,9 +13,8 @@ public class SensorDAO extends BaseDAO<SensorData, Integer> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<SensorData> findAllByOwnerAndDevice(String currentUser, String device) {
-		return em.createQuery("SELECT s FROM SensorData s WHERE s.owner = :owner AND s.device = :device")
-				.setParameter("owner", currentUser)
+	public List<SensorData> findAllByDevice(String currentUser, String device) {
+		return em.createQuery("SELECT s FROM SensorData s WHERE s.device = :device")
 				.setParameter("device", device)
 				.getResultList();
 
