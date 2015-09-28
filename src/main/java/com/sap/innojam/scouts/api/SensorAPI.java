@@ -31,7 +31,7 @@ public class SensorAPI {
 	@GET
 	@Path("/{device}")
 	public List<SensorData> findAll(@PathParam("device") String device) {
-		return dao.findAllByOwnerAndDevice(request.getUserPrincipal().getName(), device);
+		return dao.findAllByDevice(request.getUserPrincipal().getName(), device);
 	}
 
 	@POST
