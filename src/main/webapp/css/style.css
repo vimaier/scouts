@@ -46,6 +46,13 @@
 	display: block;
 }
 
+.checkItOut{
+font-size: xx-large;
+    margin-top: 7%;
+    margin-left: 20%;
+    position: absolute;	
+}
+
 .halfSpaceh, .btnFooter {
 	width: 50%;
 }
