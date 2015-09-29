@@ -7,15 +7,15 @@
 			<l:VerticalLayout class="totalwidth maincontent">
 				<u:FileUploader id="fileUploader" name="myFileUpload"
 					uploadUrl="upload/" width="400px" tooltip="Upload your file to the local server"
-					uploadComplete="handleUploadComplete" />
-				<Button text="Upload File" press="handleUploadPress" />
-				<Input id="nameInput" type="Text" placeholder="Enter name ...">
+					uploadComplete="handleUploadComplete" class="uploadercl"/>
+				<Input id="nameInput" type="Text" placeholder="Enter name ..." width="400px">
 				</Input>
-				<ComboBox placeholder="Select category ...">
+				<ComboBox placeholder="Select category ..." width="400px">
 					<core:Item text="Painting" />
 					<core:Item text="Dancing" />
 					<core:Item text="Singing" />
 				</ComboBox>
+				<Button text="Upload File" press="handleUploadPress" width="400px"/>
 			</l:VerticalLayout>
 		</content>
 	</Page>
