@@ -1,11 +1,11 @@
 <mvc:View controllerName="friststep.view.Detail" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page class="sapUiFioriObjectPage" id="detailPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{i18n>detailTitle}">
-		<headerContent>
+<!-- 		<headerContent>
 		<l:VerticalLayout width="100%" >
 		<l:content>
 
-			<!-- <Panel>
+			<Panel>
 				<headerToolbar>
 					<Toolbar>
 						<Title level="H2" text="Welcome to Mr.Scott profile" />
@@ -14,12 +14,12 @@
 					</Toolbar>
 			</headerToolbar>
 
-			</Panel> -->
+			</Panel>
 
 		</l:content>
 	</l:VerticalLayout>
 
-	</headerContent>
+	</headerContent> -->
 		<content>
 		<l:VerticalLayout class="page0">
 			<l:HorizontalLayout class="page0">
