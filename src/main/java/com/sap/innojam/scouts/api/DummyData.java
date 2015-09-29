@@ -16,7 +16,7 @@ public class DummyData {
 	public static TalentCategory catPainting = new TalentCategory("Painting");
 	public static TalentCategory catSinging = new TalentCategory("Singing");
 	public static TalentCategory catDancing = new TalentCategory("Dancing");
-	public static Talent dummyTalent = new Talent("123", "The Queen of England", "Elizabeth", "Alexandra Mary", 130,
+	public static Talent dummyTalent = new Talent("ted@talent.com", "The Queen of England", "Elizabeth", "Alexandra Mary", 130,
 			"female", "queen@buckingham.uk", null, null);
 	public static Upload dummyUploadImg = new Upload(1, dummyTalent, catPainting, Upload.Type.Image, "jpg");
 	public static Upload dummyUploadAudio = new Upload(2, dummyTalent, catSinging, Upload.Type.Audio, "mp3");
