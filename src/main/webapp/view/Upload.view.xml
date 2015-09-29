@@ -1,31 +1,22 @@
 <mvc:View controllerName="friststep.view.Upload" xmlns:core="sap.ui.core"
 	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:u="sap.ui.unified"
-	xmlns="sap.m">
+	xmlns:u="sap.ui.unified" xmlns="sap.m">
 	<Page class="sapUiFioriObjectPage" id="uploadPage" navButtonPress="onNavBack"
 		showNavButton="{device>/isPhone}" title="{i18n>detailTitle}">
-		<l:VerticalLayout>
-		<u:FileUploader
-			id="fileUploader"
-			name="myFileUpload"
-			uploadUrl="upload/"
-			width="400px"
-			tooltip="Upload your file to the local server"
-			uploadComplete="handleUploadComplete"/>
-		<Button
-			text="Upload File"
-			press="handleUploadPress"/>
-		<Input
-			id="nameInput"
-			type="Text"
-			placeholder="Enter name ...">
-		</Input>
-		<ComboBox
-			placeholder="Select category ...">
-				<core:Item  text="Painting" />
-				<core:Item  text="Dancing" />
-				<core:Item  text="Singing" />
-			</ComboBox>
-	</l:VerticalLayout>
+		<content>
+			<l:VerticalLayout class="totalwidth maincontent">
+				<u:FileUploader id="fileUploader" name="myFileUpload"
+					uploadUrl="upload/" width="400px" tooltip="Upload your file to the local server"
+					uploadComplete="handleUploadComplete" />
+				<Button text="Upload File" press="handleUploadPress" />
+				<Input id="nameInput" type="Text" placeholder="Enter name ...">
+				</Input>
+				<ComboBox placeholder="Select category ...">
+					<core:Item text="Painting" />
+					<core:Item text="Dancing" />
+					<core:Item text="Singing" />
+				</ComboBox>
+			</l:VerticalLayout>
+		</content>
 	</Page>
 </mvc:View>

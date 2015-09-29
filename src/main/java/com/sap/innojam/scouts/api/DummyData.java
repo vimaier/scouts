@@ -3,6 +3,7 @@ package com.sap.innojam.scouts.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sap.innojam.scouts.entity.Like;
 import com.sap.innojam.scouts.entity.Scout;
 import com.sap.innojam.scouts.entity.Talent;
 import com.sap.innojam.scouts.entity.TalentCategory;
@@ -21,6 +22,9 @@ public class DummyData {
 	public static Upload dummyUploadImg = new Upload(1, dummyTalent, catPainting, Upload.Type.Image, "jpg");
 	public static Upload dummyUploadAudio = new Upload(2, dummyTalent, catSinging, Upload.Type.Audio, "mp3");
 	public static Upload dummyUploadVideo = new Upload(3, dummyTalent, catDancing, Upload.Type.Video, "mp4");
+	public static Like dummyLike1 = new Like(dummyTalent, dummyUploadAudio);
+	public static Like dummyLike2 = new Like(dummyTalent, dummyUploadImg);
+	public static Like dummyLike3 = new Like(dummyTalent, dummyUploadVideo);
 	static {
 		dummyTalent.getUploads().add(dummyUploadImg);
 		dummyTalent.getUploads().add(dummyUploadAudio);
