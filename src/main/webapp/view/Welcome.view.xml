@@ -7,10 +7,9 @@ xmlns="sap.m">
 			<Toolbar></Toolbar>
 		</footer>
 		<content>
-			<!-- <html:video src="{/path}" controls="controls" autoplay="autoplay" id="videoplayer"> 
+			<core:HTML id="videoPlayer"> 
 				
-			</html:video>-->
-			<Text text="{/path}"/>
+			</core:HTML>
 		</content>
 	</Page>
 </mvc:View>
