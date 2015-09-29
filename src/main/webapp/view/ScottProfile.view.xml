@@ -5,7 +5,7 @@
 		<l:VerticalLayout width="100%" >
 		<l:content>
 
-			<Panel>
+			<!-- <Panel>
 				<headerToolbar>
 					<Toolbar>
 						<Title level="H2" text="Welcome to Mr.Scott profile" />
@@ -14,7 +14,7 @@
 					</Toolbar>
 			</headerToolbar>
 
-			</Panel>
+			</Panel> -->
 
 		</l:content>
 	</l:VerticalLayout>

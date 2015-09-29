@@ -9,7 +9,7 @@
 				items="{/RequestCollection}"
 			>
 			<items>
-				<ObjectListItem title="{liker/artistname}" press="onHandleBtn">
+				<ObjectListItem title="{liker/artistname}" press="onHandleReqBtn" type="Active">
 				 <ObjectAttribute text="{upload/title}"></ObjectAttribute>
 				</ObjectListItem>
 			</items>
