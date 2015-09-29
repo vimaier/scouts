@@ -1,5 +1,6 @@
 package com.sap.innojam.scouts.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,6 +22,8 @@ public abstract class User {
 
 	private List<TalentRequest> talreq;
 
+	private List<Long> history;
+	
 	public User() {
 		super();
 	}
@@ -39,6 +42,11 @@ public abstract class User {
 		this.gender = gender;
 		this.mail = mail;
 		this.talreq = talreq;
+		this.history = new ArrayList();
+	}
+	
+	public List<Long> getHistory(){
+		return history;
 	}
 
 	public String getUid() {
