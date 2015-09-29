@@ -21,26 +21,15 @@ import com.sap.innojam.scouts.entity.Like;
 import com.sap.innojam.scouts.entity.Talent;
 import com.sap.innojam.scouts.entity.TalentCategory;
 import com.sap.innojam.scouts.entity.Upload;
+import com.sap.security.um.user.PersistenceException;
+import com.sap.security.um.user.UnsupportedUserAttributeException;
+import com.sap.security.um.user.User;
+import com.sap.security.um.user.UserProvider;
 
 @Path("/upload")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class UploadAPI {
-
-	private static List<Upload> dummyData = new ArrayList<Upload>();
-	static {
-		TalentCategory catPainting = new TalentCategory("Painting");
-		TalentCategory catSinging = new TalentCategory("Singing");
-		TalentCategory catDancing = new TalentCategory("Dancing");
-		Talent dummyTalent = new Talent("ted@talent.com");
-		Upload dummyUploadImg = new Upload(1, dummyTalent, catPainting, Upload.Type.Image, "jpg");
-		Upload dummyUploadAudio = new Upload(2, dummyTalent, catSinging, Upload.Type.Audio, "mp3");
-		Upload dummyUploadVideo = new Upload(3, dummyTalent, catDancing, Upload.Type.Video, "mp4");
-		dummyTalent.getUploads().add(dummyUploadImg);
-		dummyTalent.getUploads().add(dummyUploadAudio);
-		dummyTalent.getUploads().add(dummyUploadVideo);
-		dummyData = dummyTalent.getUploads();
-	}
 
 	@Inject
 	SensorDAO dao;
@@ -48,6 +37,9 @@ public class UploadAPI {
 	@Context
 	SecurityContext request;
 
+	@Inject
+	UserProvider userProvider;
+	
 	@GET
 	@Path("/{uid}")
 	public Upload getUpload(@PathParam("uid") String uploadId) {
@@ -63,7 +55,7 @@ public class UploadAPI {
 		}
 
 		// get dummy upload
-		for (Upload u : dummyData) {
+		for (Upload u : DummyData.dummyData) {
 			if (uid == u.getId())
 				return u;
 		}
@@ -73,14 +65,29 @@ public class UploadAPI {
 	@GET
 	@Path("/random")
 	public Upload getRandom() {
-		int rnd = (new Random()).nextInt(dummyData.size());
-		return dummyData.get(rnd);
+		List<Long> history = DummyData.scott.getHistory();
+		
+		Random random = new Random();
+		for(int i=0; i<1000; i++){
+		
+			int rnd = random.nextInt(DummyData.dummyData.size());
+			Upload u = DummyData.dummyData.get(rnd);
+			if(!history.contains(u.getId())){
+				history.add(u.getId());
+				return u;
+			}
+		}
+		
+		history.clear();
+		int rnd = random.nextInt(DummyData.dummyData.size());
+		Upload u = DummyData.dummyData.get(rnd);
+		return u;
 	}
 
 	@GET
 	@Path("")
 	public List<Upload> getAll() {
-		return dummyData;
+		return DummyData.dummyData;
 	}
 
 	@POST
@@ -94,7 +101,7 @@ public class UploadAPI {
 	}
 
 	@POST
-	@Path("/next")
+	@Path("/dislike/{upid}")
 	public Upload getRandomNext(FilterData filterData) {
 		// TODO: get the next random upload. Use scoutId for history tracking and filterData to get only filtered
 		// uploads.
@@ -109,6 +116,22 @@ public class UploadAPI {
 		likes.add(DummyData.dummyLike2);
 		likes.add(DummyData.dummyLike3);
 		return likes;
+	}
+	
+	private void likeOrDislike(boolean dislike){
+		User currentUser;
+		try {
+			currentUser = userProvider.getCurrentUser();
+			String userId = currentUser.getAttribute("userid");
+			
+			//todo...
+		} catch (PersistenceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedUserAttributeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
