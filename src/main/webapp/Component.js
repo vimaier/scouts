@@ -10,9 +10,7 @@ sap.ui.core.UIComponent.extend("friststep.Component", {
 			libs: ["sap.m", "sap.ui.layout"],
 			components: []
 		},
-
 		rootView: "friststep.view.App",
-
 		config: {
 			resourceBundle: "i18n/messageBundle.properties",
 			serviceConfig: {
@@ -20,7 +18,6 @@ sap.ui.core.UIComponent.extend("friststep.Component", {
 				serviceUrl: ""
 			}
 		},
-
 		routing: {
 			config: {
 				routerClass: friststep.MyRouter,

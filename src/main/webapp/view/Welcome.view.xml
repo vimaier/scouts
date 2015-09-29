@@ -1,47 +1,35 @@
-<mvc:View controllerName="friststep.view.Welcome" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
-xmlns:l="sap.ui.layout"
-xmlns:html="http://www.w3.org/1999/xhtml"
-xmlns="sap.m">
+<mvc:View controllerName="friststep.view.Welcome" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
 	<Page enableScrolling="true" id="welcome">
 		<footer>
 			<Toolbar></Toolbar>
 		</footer>
 		<content>
-			<l:VerticalLayout>
-			<!-- Your Assets -->
-			<Panel class="totalwidth">
-				<headerToolbar>
-					<Toolbar height="3rem">
-						<Button icon="sap-icon://refresh" press="handleMyAssetNav"/>
-						<Title text="Your Assets: "/>
-						<Title text="{yourasset>/title}"/>
-						
-					</Toolbar>
-				</headerToolbar>
-				<content>
-						<core:HTML id="yourasset"/> 
-				</content>
-			</Panel>
-			
-			<!-- Community Assets -->
-			<Panel class="totalwidth">
-				<headerToolbar>
-					<Toolbar>
-							<Button icon="sap-icon://refresh" press="handleMyCommunityNav"/>
-							<Button type="Accept" icon="sap-icon://accept" press="like" />
-							<Button type="Reject" icon="sap-icon://decline" press="dislike"/>
-						
-							<Title text="Community Assets: "/>
-							<Title text="{communityasset>/title}"/>
-						
-					</Toolbar>
-				</headerToolbar>
-				<content>
-					<core:HTML id="communityasset"/>			
-				</content>
-			</Panel>
+			<l:VerticalLayout class="totalwidth maincontent">
+				<!-- Your Assets -->
+				<!-- <Panel class="totalwidth"> <headerToolbar> <Toolbar height="3rem"> 
+					<Button icon="sap-icon://refresh" press="handleMyAssetNav"/> <Title text="Your 
+					Assets: "/> <Title text="{yourasset>/title}"/> </Toolbar> </headerToolbar> 
+					<content> <core:HTML id="yourasset"/> </content> </Panel> -->
+				<!-- Community Assets -->
+				<Panel>
+					<headerToolbar>
+					</headerToolbar>
+					<content>
+						<Title class="title" text="Title: {communityasset>/title}" />
+						<core:HTML id="communityasset" class="maincontentasset" />
+						<FlexBox alignItems="Start" justifyContent="Center">
+							<items>
+								<Button class="buttonbarbuttons" type="Reject"
+									icon="sap-icon://decline" press="dislike" />
+								<Button class="buttonbarbuttons" type="Accept" icon="sap-icon://accept"
+									press="like" />
+							</items>
+						</FlexBox>
+					</content>
+				</Panel>
 			</l:VerticalLayout>
 		</content>
-		
 	</Page>
 </mvc:View>

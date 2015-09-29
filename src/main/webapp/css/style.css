@@ -1,11 +1,50 @@
 .spacerTop {
-    margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .totalwidth {
 	width: 100%;
 }
 
+.maincontent {
+	text-align: center;
+	margin: auto;
+}
+
+.title {
+	color: #AA7439;
+	font-weight: bold;
+	font-size: 30px;
+	display: block;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.maincontentasset {
+	width: 100%;
+}
+
+.buttonbar {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.buttonbarbuttons {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 250px;
+	height: 50px;
+	padding-left: 20px;
+}
+
+.main_btn {
+	display: block;
+}
+
+.title :AFTER {
+	display: block;
+}
 
 .halfSpaceh, .btnFooter {
 	width: 50%;
