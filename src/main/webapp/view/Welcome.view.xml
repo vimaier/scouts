@@ -7,9 +7,24 @@ xmlns="sap.m">
 			<Toolbar></Toolbar>
 		</footer>
 		<content>
-			<core:HTML id="videoPlayer"> 
-				
-			</core:HTML>
+			
+			<Panel>
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="Your Assets: "/>
+						<Title text="{/title}"/>
+						
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<l:VerticalLayout>
+						<Text text=" "/>
+						<l:HorizontalLayout>
+									<core:HTML id="videoPlayer"/> 
+						</l:HorizontalLayout>
+					</l:VerticalLayout>
+				</content>
+			</Panel>
 		</content>
 	</Page>
 </mvc:View>
