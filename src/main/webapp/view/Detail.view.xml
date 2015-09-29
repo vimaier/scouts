@@ -2,33 +2,40 @@
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page class="sapUiFioriObjectPage" id="detailPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{i18n>detailTitle}">
 		<content>
-			<ObjectHeader number="" numberUnit="" title="">
-				<attributes>
-					<ObjectAttribute text=""/>
-				</attributes>
-				<firstStatus>
-					<ObjectStatus text=""/>
-				</firstStatus>
-			</ObjectHeader>
-			<IconTabBar id="idIconTabBar" select="onDetailSelect">
-				<items>
-					<IconTabFilter icon="sap-icon://hint" key="Details">
-						<content>
-							<f:SimpleForm columnsL="1" columnsM="1" editable="false" emptySpanL="4" emptySpanM="4" id="detailForm" labelSpanL="3" labelSpanM="3"
-								layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
-								<f:content>
-									<Label id="label1" text=""/>
-									<Text id="text1" text=""/>
-									<Label id="label2" text=""/>
-									<Text id="text2" text=""/>
-									<Label id="label3" text=""/>
-									<Text id="text3" text=""/>
-								</f:content>
-							</f:SimpleForm>
-						</content>
-					</IconTabFilter>
-				</items>
-			</IconTabBar>
+			<l:VerticalLayout>
+			<!-- Your Assets -->
+			<Panel class="totalwidth">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Button icon="sap-icon://refresh" press="handleMyAssetNav"/>
+						<Title text="Your Assets: "/>
+						<Title text="{yourasset>/title}"/>
+						
+					</Toolbar>
+				</headerToolbar>
+				<content>
+						<core:HTML id="yourasset"/> 
+				</content>
+			</Panel>
+			
+			<!-- Community Assets -->
+			<Panel class="totalwidth">
+				<headerToolbar>
+					<Toolbar>
+							<Button icon="sap-icon://refresh" press="handleMyCommunityNav"/>
+							<Button type="Accept" icon="sap-icon://accept" press="like" />
+							<Button type="Reject" icon="sap-icon://decline" press="dislike"/>
+						
+							<Title text="Community Assets: "/>
+							<Title text="{communityasset>/title}"/>
+						
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<core:HTML id="communityasset"/>			
+				</content>
+			</Panel>
+			</l:VerticalLayout>
 		</content>
 		<footer>
 			<Toolbar></Toolbar>
