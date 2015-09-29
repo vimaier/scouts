@@ -1,6 +1,19 @@
-sap.ui.core.mvc.Controller.extend("friststep.view.Master", {
+sap.ui.define(['jquery.sap.global',
+		'sap/ui/model/json/JSONModel',
+		'sap/ui/core/mvc/Controller'
+		],
+	function(jQuery, JSONModel, Controller) {
+	"use strict";
 
+	var CController = Controller.extend("friststep.view.Master", {
+	
 	onInit: function() {
+		//nicht schoen
+		window.user = {
+				name: 'Ted',
+				type: 'talent'
+		};
+		
 		this.oInitialLoadFinishedDeferred = jQuery.Deferred();
 
 		var oEventBus = this.getEventBus();
@@ -11,7 +24,35 @@ sap.ui.core.mvc.Controller.extend("friststep.view.Master", {
 		}
 		this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
 		oEventBus.subscribe("Master2", "NotFound", this.onNotFound, this);
-	},	
+		
+	},
+	handleHomeBtn: function(oEvent) {
+		var el = oEvent.getSource();
+		this.changeUser();
+	},
+	changeUser: function() {
+		var typeOfDisplay = "none";
+		var requestTitle = "My Invitation";
+		if (typeof window.user != "undefined" && window.user.type == "talent") {
+			window.user = {
+					name: 'Scott',
+					type: 'scout'
+			};
+		} else {
+			window.user = {
+					name: 'Ted',
+					type: 'talent'
+			};
+			requestTitle = "My Request";
+			typeOfDisplay = "block"
+		}
+		//this.getView().setModel(new JSONModel(window.user), "myuser");
+		document.getElementById("__xmlview1--lblName").innerHTML = window.user.name;
+		document.getElementById("__xmlview1--mediaBtn").style.display = typeOfDisplay;
+		document.getElementById("__xmlview1--myMedia").style.display = typeOfDisplay;
+		document.getElementById("__xmlview1--Requests-content").innerHTML = requestTitle;
+		
+	},
 	onHandleBtn: function(oEvent) {
 		var el = oEvent.getSource();
 		switch(el.getId()){
@@ -124,3 +165,6 @@ sap.ui.core.mvc.Controller.extend("friststep.view.Master", {
 		this.getEventBus().unsubscribe("Master2", "NotFound", this.onNotFound, this);
 	}
 });
+	return CController;
+
+	});
