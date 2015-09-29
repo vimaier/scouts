@@ -24,8 +24,6 @@
 				<Button press="onHandleBtn" id="profileBtn" text="Edit Profile" icon="sap-icon://person-placeholder" class="totalwidth"/>
 			</l:VerticalLayout>
 		</content>
-		<footer>
-			<Toolbar></Toolbar>
-		</footer>
+		
 	</Page>
 </mvc:View>

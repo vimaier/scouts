@@ -5,3 +5,8 @@
 .totalwidth {
 	width: 100%;
 }
+
+
+.halfSpaceh, .btnFooter {
+	width: 50%;
+}
