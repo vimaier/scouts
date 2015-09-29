@@ -2,29 +2,43 @@
 xmlns:l="sap.ui.layout"
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns="sap.m">
-	<Page enableScrolling="false">
-		<footer>
-			<Toolbar></Toolbar>
-		</footer>
+	<Page enableScrolling="true" class="totalwidth">
 		<content>
-			
-			<Panel>
+			<l:VerticalLayout>
+			<!-- Your Assets -->
+			<Panel class="totalwidth">
 				<headerToolbar>
 					<Toolbar height="3rem">
+						<Button icon="sap-icon://refresh" press="handleMyAssetNav"/>
 						<Title text="Your Assets: "/>
-						<Title text="{/title}"/>
+						<Title text="{yourasset>/title}"/>
 						
 					</Toolbar>
 				</headerToolbar>
 				<content>
-					<l:VerticalLayout>
-						<Text text=" "/>
-						<l:HorizontalLayout>
-									<core:HTML id="videoPlayer"/> 
-						</l:HorizontalLayout>
-					</l:VerticalLayout>
+						<core:HTML id="yourasset"/> 
 				</content>
 			</Panel>
+			
+			<!-- Community Assets -->
+			<Panel class="totalwidth">
+				<headerToolbar>
+					<Toolbar>
+							<Button icon="sap-icon://refresh" press="handleMyCommunityNav"/>
+							<Button type="Accept" icon="sap-icon://accept" press="like" />
+							<Button type="Reject" icon="sap-icon://decline" press="dislike"/>
+						
+							<Title text="Community Assets: "/>
+							<Title text="{communityasset>/title}"/>
+						
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<core:HTML id="communityasset"/>			
+				</content>
+			</Panel>
+			</l:VerticalLayout>
 		</content>
+		
 	</Page>
 </mvc:View>
