@@ -56,6 +56,33 @@ font-size: xx-large;
 .halfSpaceh, .btnFooter {
 	width: 50%;
 }
+.sapUiHLayoutChildWrapper{
+	margin-left:10%;
+	margin-right:10%
+
+	}
+	.sapUiHLayoutNoWrap {
+	 width: 100%;
+	}
+	
+	.sapMInputBaseInner {
+	width: 1000px;
+	}
+	.bigInput
+	{
+	width: 1000px;
+	height: 300px;!important
+	}
+	
+	.text
+	{
+	width:200px;
+	}
+	
+	.sapUiVlt {
+   
+    margin-top:10%;
+}
 
 .uploadercl{
 	padding-top: 30px;
