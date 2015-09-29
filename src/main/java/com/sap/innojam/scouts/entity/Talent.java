@@ -25,7 +25,10 @@ public class Talent extends User {
 			String lastname, int age, String gender, String mail, List<TalentRequest> talreq,
 			List<Upload> uploads) {
 		super(uid, artistname, firstname, lastname, age, gender, mail, talreq);
-		this.uploads = uploads;
+		if (null == uploads)
+			this.uploads = new ArrayList<Upload>();
+		else
+			this.uploads = uploads;
 	}
 
 	public List<Upload> getUploads() {
