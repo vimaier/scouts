@@ -1,44 +1,59 @@
 <mvc:View controllerName="friststep.view.Detail" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page class="sapUiFioriObjectPage" id="detailPage" navButtonPress="onNavBack" showNavButton="{device>/isPhone}" title="{i18n>detailTitle}">
-		<content>
-			<l:VerticalLayout>
-			<!-- Your Assets -->
-			<Panel class="totalwidth">
-				<headerToolbar>
-					<Toolbar height="3rem">
-						<Button icon="sap-icon://refresh" press="handleMyAssetNav"/>
-						<Title text="Your Assets: "/>
-						<Title text="{yourasset>/title}"/>
-						
-					</Toolbar>
-				</headerToolbar>
-				<content>
-						<core:HTML id="yourasset"/> 
-				</content>
-			</Panel>
-			
-			<!-- Community Assets -->
-			<Panel class="totalwidth">
+		<headerContent>
+		<l:VerticalLayout width="100%" >
+		<l:content>
+
+			<Panel>
 				<headerToolbar>
 					<Toolbar>
-							<Button icon="sap-icon://refresh" press="handleMyCommunityNav"/>
-							<Button type="Accept" icon="sap-icon://accept" press="like" />
-							<Button type="Reject" icon="sap-icon://decline" press="dislike"/>
-						
-							<Title text="Community Assets: "/>
-							<Title text="{communityasset>/title}"/>
+						<Title level="H2" text="Welcome to Mr.Scott profile" />
+			<Button id="openMenu" icon="sap-icon://account"/>
 						
 					</Toolbar>
-				</headerToolbar>
-				<content>
-					<core:HTML id="communityasset"/>			
-				</content>
+			</headerToolbar>
+
 			</Panel>
+
+		</l:content>
+	</l:VerticalLayout>
+
+	</headerContent>
+
+		
+<content>
+				<Text text= "Check out the Mr.Scott proffile.See if you like it." class="checkItOut"/>
+		
+			<l:HorizontalLayout class="page0">
+			<l:VerticalLayout class="sapUiSmallMargin">
+				<Text text="Name:" class="text"/>
+				<Text text="Last Name:" class="text"/>
+				<Text text = "Company:" class="text"/>
+				<Text text = "Details of the scouts :" class="text"/>
+				
+			</l:VerticalLayout >
+			<l:VerticalLayout class ="sapUiSmallMargin">
+								<Text text="Martina:" class="text"/>
+				<Text text="Naumovska:" class="text" />
+				<Text text = "Tu Wien:" class="text"/>
+				<Text text = "I am Martina. I love talent. Come to me baby :D LOL " class="text"/>
+				
 			</l:VerticalLayout>
+			</l:HorizontalLayout>
 		</content>
+		
 		<footer>
-			<Toolbar></Toolbar>
+			<Toolbar>
+				<Button type="Accept" text="Like the scout" class="btnFooter">
+					
+				</Button>
+				<Button type="Reject" text="Don't like the scout " class="btnFooter" >
+					
+				</Button>
+				
+			</Toolbar>
 		</footer>
+	
 	</Page>
 </mvc:View>

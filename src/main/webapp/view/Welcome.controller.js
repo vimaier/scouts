@@ -10,8 +10,12 @@ sap.ui.define(['jquery.sap.global',
 		
 		
 		onInit: function() {
-			this.loadData('yourasset');
+			//this.loadData('yourasset');
 			this.loadData('communityasset');
+		},
+		exit : function() {
+			var element = that.getView().byId('communityasset');
+			element.setContent("");
 		},
 		
 		handleMyAssetNav: function(evt) {
