@@ -20,11 +20,8 @@
 	</l:VerticalLayout>
 
 	</headerContent>
-
-		
-<content >
-				
-	<l:VerticalLayout class="page0">
+		<content>
+		<l:VerticalLayout class="page0">
 			<l:HorizontalLayout class="page0">
 			
 				<Text text="Name:" class="text"/>
@@ -52,9 +49,9 @@
 			</l:HorizontalLayout>
 			
 	</l:VerticalLayout>
+			
 		</content>
-		
-		<footer>
+	<footer>
 			<Toolbar>
 				<Button type="Accept" text="Like the scout" class="btnFooter">
 					
@@ -65,6 +62,6 @@
 				
 			</Toolbar>
 		</footer>
-	
+		
 	</Page>
 </mvc:View>
