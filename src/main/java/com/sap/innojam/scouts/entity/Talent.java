@@ -3,8 +3,11 @@ package com.sap.innojam.scouts.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.sap.security.um.user.UserProvider;
 
 @Entity
 @XmlRootElement
@@ -15,6 +18,7 @@ public class Talent extends User {
 	public Talent() {
 		super();
 	}
+	
 	
 	public Talent(String uid){
 		super(uid);

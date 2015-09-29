@@ -18,13 +18,15 @@ public class Like {
 	private User liker;
 	@NotNull
 	private Upload upload;
+	private boolean isDisliked;
 
 	protected Like() {
 	}
 
-	public Like(User liker, Upload upload) {
+	public Like(User liker, Upload upload, boolean isDisLiked) {
 		this.liker = liker;
 		this.upload = upload;
+		this.isDisliked = isDisLiked;
 	}
 
 	public long getId() {
@@ -37,5 +39,9 @@ public class Like {
 
 	public Upload getUpload() {
 		return upload;
+	}
+	
+	public boolean isDisliked(){
+		return isDisliked;
 	}
 }
