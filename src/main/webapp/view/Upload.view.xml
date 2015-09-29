@@ -15,6 +15,17 @@
 		<Button
 			text="Upload File"
 			press="handleUploadPress"/>
+		<Input
+			id="nameInput"
+			type="Text"
+			placeholder="Enter name ...">
+		</Input>
+		<ComboBox
+			placeholder="Select category ...">
+				<core:Item  text="Painting" />
+				<core:Item  text="Dancing" />
+				<core:Item  text="Singing" />
+			</ComboBox>
 	</l:VerticalLayout>
 	</Page>
 </mvc:View>
