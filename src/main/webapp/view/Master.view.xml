@@ -20,7 +20,7 @@
 				<Button press="onHandleBtn" id="homeBtn" text="Home" icon="sap-icon://home" class="totalwidth"/>
 				<Button press="onHandleBtn" id="mediaBtn" text="Add new Media" icon="sap-icon://upload" class="totalwidth"/>
 				<Button press="onHandleBtn" id="myMedia" text="My Media" icon="sap-icon://play" class="totalwidth"/>
-				<Button press="onHandleBtn" id="myRequest" text="Requests" icon="sap-icon://play" class="totalwidth"/>
+				<Button press="onHandleBtn" id="Requests" text="My Requests" icon="sap-icon://collaborate" class="totalwidth"/>
 				<Button press="onHandleBtn" id="profileBtn" text="Edit Profile" icon="sap-icon://person-placeholder" class="totalwidth"/>
 			</l:VerticalLayout>
 		</content>

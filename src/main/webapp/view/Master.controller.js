@@ -25,21 +25,21 @@ sap.ui.core.mvc.Controller.extend("friststep.view.Master", {
 			case "__xmlview1--mediaBtn":
 				this.getRouter().myNavToWithoutHash({
 					currentView: this.getView(),
-					targetViewName: "friststep.view.Welcome",
+					targetViewName: "friststep.view.Upload",
 					targetViewType: "XML"
 				});
 				break;
 			case "__xmlview1--myMedia":
 				this.getRouter().myNavToWithoutHash({
 					currentView: this.getView(),
-					targetViewName: "friststep.view.Welcome",
+					targetViewName: "friststep.view.MyMedia",
 					targetViewType: "XML"
 				});
 				break;
-			case "__xmlview1--myRequests":
+			case "__xmlview1--Requests":
 				this.getRouter().myNavToWithoutHash({
 					currentView: this.getView(),
-					targetViewName: "friststep.view.Welcome",
+					targetViewName: "friststep.view.Requests",
 					targetViewType: "XML"
 				});
 				break;
