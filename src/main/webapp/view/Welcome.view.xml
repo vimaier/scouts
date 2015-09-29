@@ -2,7 +2,7 @@
 xmlns:l="sap.ui.layout"
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns="sap.m">
-	<Page enableScrolling="false">
+	<Page enableScrolling="false" id="welcome">
 		<footer>
 			<Toolbar></Toolbar>
 		</footer>

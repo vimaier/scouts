@@ -9,16 +9,48 @@ sap.ui.core.mvc.Controller.extend("friststep.view.Master", {
 		if (sap.ui.Device.system.phone) {
 			return;
 		}
-
 		this.getRouter().attachRoutePatternMatched(this.onRouteMatched, this);
-
 		oEventBus.subscribe("Master2", "NotFound", this.onNotFound, this);
-	},
-	
+	},	
 	onHandleBtn: function(oEvent) {
-		console.log("asdad");
 		var el = oEvent.getSource();
-		//console.log(el.getId());
+		switch(el.getId()){
+			case "__xmlview1--homeBtn":
+				this.getRouter().myNavToWithoutHash({
+					currentView: this.getView(),
+					targetViewName: "friststep.view.Welcome",
+					targetViewType: "XML"
+				});
+				break;
+			case "__xmlview1--mediaBtn":
+				this.getRouter().myNavToWithoutHash({
+					currentView: this.getView(),
+					targetViewName: "friststep.view.Welcome",
+					targetViewType: "XML"
+				});
+				break;
+			case "__xmlview1--myMedia":
+				this.getRouter().myNavToWithoutHash({
+					currentView: this.getView(),
+					targetViewName: "friststep.view.Welcome",
+					targetViewType: "XML"
+				});
+				break;
+			case "__xmlview1--myRequests":
+				this.getRouter().myNavToWithoutHash({
+					currentView: this.getView(),
+					targetViewName: "friststep.view.Welcome",
+					targetViewType: "XML"
+				});
+				break;
+			case "__xmlview1--profileBtn":
+				this.getRouter().myNavToWithoutHash({
+					currentView: this.getView(),
+					targetViewName: "friststep.view.Detail",
+					targetViewType: "XML"
+				});
+				break;		
+		}
 	},
 
 	onRouteMatched: function(oEvent) {
