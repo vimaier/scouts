@@ -22,29 +22,29 @@ import com.sap.innojam.scouts.entity.SensorData;
 @Produces(MediaType.APPLICATION_JSON)
 public class SensorAPI {
 
-	@Inject
-	SensorDAO dao;
+//	@Inject
+//	SensorDAO dao;
 	
-	@Context
-	SecurityContext request;
-
-	@GET
-	@Path("/{device}")
-	public List<SensorData> findAll(@PathParam("device") String device) {
-		return dao.findAllByDevice(request.getUserPrincipal().getName(), device);
-	}
-
-	@POST
-	@Path("/{device}")
-	public SensorData create(@PathParam("device") String device, SensorData sensorParam) {
-		SensorData newSensor = new SensorData(request.getUserPrincipal().getName(), device, new Date(), sensorParam.getType(),
-				sensorParam.getValue());
-		return dao.insert(newSensor);
-	}
-
-	@GET
-	@Path("/{device}/create")
-	public SensorData createRandom(@PathParam("device") String device) {
-		return dao.insert(new SensorData(request.getUserPrincipal().getName(), device, new Date(), "TEST", 0.0));
-	}
+//	@Context
+//	SecurityContext request;
+//
+//	@GET
+//	@Path("/{device}")
+//	public List<SensorData> findAll(@PathParam("device") String device) {
+//		return dao.findAllByDevice(request.getUserPrincipal().getName(), device);
+//	}
+//
+//	@POST
+//	@Path("/{device}")
+//	public SensorData create(@PathParam("device") String device, SensorData sensorParam) {
+//		SensorData newSensor = new SensorData(request.getUserPrincipal().getName(), device, new Date(), sensorParam.getType(),
+//				sensorParam.getValue());
+//		return dao.insert(newSensor);
+//	}
+//
+//	@GET
+//	@Path("/{device}/create")
+//	public SensorData createRandom(@PathParam("device") String device) {
+//		return dao.insert(new SensorData(request.getUserPrincipal().getName(), device, new Date(), "TEST", 0.0));
+//	}
 }

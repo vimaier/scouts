@@ -38,8 +38,8 @@ public class Application extends ResourceConfig {
 			@Override
 			protected void configure() {
 				// EntityManager Factory
-				bindFactory(EMFactory.class).to(EntityManager.class).in(
-						RequestScoped.class);
+//				bindFactory(EMFactory.class).to(EntityManager.class).in(
+//						RequestScoped.class);
 
 				// HCP Service: UserProvider / User
 				bind(getUserProvider()).to(UserProvider.class);

@@ -20,9 +20,9 @@ import com.sap.innojam.scouts.entity.Scout;
 public class ScoutAPI {
 	
 	private final static Logger LOGGER = Logger.getLogger(ScoutAPI.class.getSimpleName());
-
-	@Inject
-	SensorDAO dao;
+//
+//	@Inject
+//	SensorDAO dao;
 	
 	@Context
 	SecurityContext request;

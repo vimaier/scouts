@@ -31,8 +31,8 @@ import com.sap.security.um.user.UserProvider;
 @Produces(MediaType.APPLICATION_JSON)
 public class UploadAPI {
 
-	@Inject
-	SensorDAO dao;
+//	@Inject
+//	SensorDAO dao;
 
 	@Context
 	SecurityContext request;

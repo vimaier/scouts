@@ -30,8 +30,8 @@ public class TalentAPI {
 
 	Logger LOGGER = Logger.getLogger(TalentAPI.class.getName());
 
-	@Inject
-	SensorDAO dao;
+//	@Inject
+//	SensorDAO dao;
 
 	@Inject
 	UserProvider userProvider;
